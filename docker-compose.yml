@@ -1,15 +1,15 @@
+# In case you have problems with node, npm, webpack, you can use docker to make a separate "machine"
+# https://docs.docker.com/get-docker/
+
+# Run this command:
+# docker-compose up
+
+version: "3.2"
 services:
-  app:
+  webpack:
     build: .
+    image: dh2642:latest
     ports:
       - "8080:8080"
     volumes:
-      - .:/app
-      - node_modules:/app/node_modules
-    environment:
-      - NODE_ENV=development
-    stdin_open: true
-    tty: true
-
-volumes:
-  node_modules:
+      - ./:/dh2642-lab

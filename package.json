@@ -1,34 +1,36 @@
 {
+  "name": "npm_tutorial",
   "version": "1.0.0",
-  "module":"true",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "vitest",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview" 
+    "dev": "webpack serve",
+    "build": "webpack"
+  },
+  "author": "",
+  "resolutions": {
+    "webpack": "5.66.0"
   },
   "dependencies": {
-    "react": "latest",
-    "mobx":"latest",
-    "mobx-react-lite":"latest",
-    "firebase":"latest",
-    "vue":"latest",
-    "react-dom":"latest",
-    "react-router-dom": "latest",
-    "vue-router": "latest"
+    "bootstrap": "^5.2.2",
+    "firebase": "^8.2.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "vue": "^3.2.26"
   },
   "devDependencies": {
-    "vitest": "latest",
-    "@babel/core": "latest",
-    "babel-plugin-module-resolver": "latest",
-    "react-test-renderer": "latest",
-    "@testing-library/vue": "latest",
-    "@testing-library/react": "latest",
-    "@testing-library/jest-dom": "latest",
-    "vite-plugin-virtual-html": "latest",
-    "@vitejs/plugin-vue": "latest",
-    "@iprog/test":"latest",
-    "happy-dom":"latest"
-  },
-  "private": true
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "chai": "^4.3.4",
+    "html-webpack-plugin": "^5.5.0",
+    "jsdom": "^19.0.0",
+    "mocha": "^8.4.0",
+    "mocha-loader": "^5.1.5",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  }
 }

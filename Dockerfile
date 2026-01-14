@@ -1,21 +1,19 @@
-# Use Node.js 22 LTS version (required by Vite)
-FROM node:22
+# In case you have problems with node, npm, webpack, you can use docker to make a separate "machine"
+# https://docs.docker.com/get-docker/
 
-# Set working directory
-WORKDIR /app
+# Run this command:
+# docker-compose up
 
-# Copy package files
-COPY package*.json ./
+FROM ubuntu:20.04
 
+RUN apt-get update
+RUN apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_17.x |  bash -
+RUN apt-get install -y nodejs
 
-# Install dependencies
-RUN npm install && npm update @iprog/test
-
-# Copy project files
-COPY . .
-
-# Expose the port that Vite uses
 EXPOSE 8080
 
-# Start the development server with host binding for Docker
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+RUN printf "#!/bin/bash\ncd /dh2642-lab;npm install; npm run dev\n" > /start.sh
+RUN chmod a+x /start.sh
+ENTRYPOINT ["/start.sh"]
+
